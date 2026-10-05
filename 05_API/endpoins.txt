@@ -1,0 +1,4 @@
+Method,Endpoint Route,Purpose,Success Code,Conflict/Throttle Code
+POST,/api/v1/reserve,Atomic stock reservation hold (Sharded Lua),201 Created,409 Conflict / 429 Too Many Requests
+POST,/api/v1/pay,Idempotent payment processing & outbox write,201 Created / 200 OK (Duplicate),400 Bad Request / 409 Conflict
+GET,/api/v1/health,Service liveness & container health check,200 OK,503 Service Unavailable
